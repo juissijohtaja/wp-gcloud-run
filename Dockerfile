@@ -10,7 +10,14 @@ RUN docker-php-ext-configure zip --with-libzip \
     && docker-php-ext-install mbstring gd mysqli pdo pdo_mysql \
     && docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr --with-webp-dir=/usr \
     && docker-php-ext-install -j "$(nproc)" gd \
-    && a2enmod rewrite
+    && a2enmod rewrite 
 
 WORKDIR /var/www/html
 COPY ./app /var/www/html/
+COPY ./my-plugins /var/www/html/wp-content/plugins
+COPY ./my-themes /var/www/html/wp-content/themes
+
+RUN mkdir -p /var/www/html/wp-content/uploads \
+    && chown -R www-data:www-data /var/www/html/wp-content/uploads \
+    && chmod 755 /var/www/html/wp-content/uploads
+

@@ -1,0 +1,45 @@
+# Local dev setup
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:5.6.1
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app/wp-content:/var/www/html/wp-content
+      - ./my-themes/wpbootstrap:/var/www/html/wp-content/themes/wpbootstrap
+      - ./my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: wp-phpmyadmin
+    depends_on: 
+      - db
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+     - PMA_ARBITRARY=1
+
+volumes:
+    db_data: {}

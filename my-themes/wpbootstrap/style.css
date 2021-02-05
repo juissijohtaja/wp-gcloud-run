@@ -1,0 +1,29 @@
+/*
+Theme Name: WPBootstrap
+Author: JK
+Description: My Bootstrap theme.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wpbootstrap
+*/
+
+body {
+    background-color: #ececee;
+}
+
+#primary-menu a {
+    color: #9b9b9b;
+    text-decoration: none;
+}
+#primary-menu a:hover, #primary-menu a:active {
+    color: #fcfcfc;
+}
+
+#footer-menu a {
+    color: #c9c9c9;
+    text-decoration: none;
+}
+#footer-menu a:hover, #primary-menu a:active {
+    color: #fcfcfc;
+}

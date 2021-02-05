@@ -6,6 +6,10 @@ gcloud builds submit --tag gcr.io/jkwordpress/jkwordpress
 Cloud Code Plugin - Deploy to Cloud Run
 
 
+### Local Docker
+docker build -t wp-gcloud-run .
+
+
 ## Build and deploy
 ```bash
 gcloud builds submit --tag gcr.io/PROJECT_NAME/IMAGE_NAME // build an image
