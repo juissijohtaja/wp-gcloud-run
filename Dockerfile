@@ -14,8 +14,8 @@ RUN docker-php-ext-configure zip --with-libzip \
 
 WORKDIR /var/www/html
 COPY ./app /var/www/html/
-COPY ./my-plugins /var/www/html/wp-content/plugins
-COPY ./my-themes /var/www/html/wp-content/themes
+#COPY ./my-plugins /var/www/html/wp-content/plugins
+#COPY ./my-themes /var/www/html/wp-content/themes
 
 RUN mkdir -p /var/www/html/wp-content/uploads \
     && chown -R www-data:www-data /var/www/html/wp-content/uploads \

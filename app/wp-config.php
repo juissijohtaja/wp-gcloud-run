@@ -83,6 +83,8 @@ $_SERVER['SERVER_PORT'] = 443;
 
 /* That's all, stop editing! Happy publishing. */
 
+
+/* My Custom Settings */
 define( 'UPLOADS', 'wp-content/uploads' );
 
 /** Absolute path to the WordPress directory. */

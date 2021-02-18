@@ -27,3 +27,12 @@ body {
 #footer-menu a:hover, #primary-menu a:active {
     color: #fcfcfc;
 }
+
+#homepage-hero {
+  background: url(./images/mountains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  height: 60vh;
+}

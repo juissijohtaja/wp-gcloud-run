@@ -55,6 +55,7 @@ function jk_widget_areas() {
         )
     );
 }
-add_action( 'widgets_init', 'jk_widget_areas' )
+add_action( 'widgets_init', 'jk_widget_areas' );
+
 
 ?>

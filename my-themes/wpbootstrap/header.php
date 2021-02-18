@@ -4,7 +4,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #272643">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/"><?php echo get_bloginfo( 'name' ); ?></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
