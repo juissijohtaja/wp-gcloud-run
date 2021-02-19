@@ -23,11 +23,10 @@ app/wp-snapshots/*
 app/wp-content/languages/*
 app/wp-content/uploads/*
 app/wp-content/plugins/*
-app/!wp-content/plugins/CUSTOM_PLUGIN_1
-app/!wp-content/plugins/CUSTOM_PLUGIN_2 # etc.
+!app/wp-content/plugins/CUSTOM_PLUGIN_1
+!app/wp-content/plugins/CUSTOM_PLUGIN_2 # etc.
 app/wp-content/themes/*
-app/!wp-content/themes/wpbootstrap
-app/!wp-content/themes/CUSTOM_THEME_2 # etc.
+!app/wp-content/themes/wpbootstrap
  
 # Ignore node dependency directories.
 **/node_modules/
