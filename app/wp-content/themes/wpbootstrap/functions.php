@@ -20,6 +20,7 @@ add_action( 'init', 'jk_menus' );
 function jk_theme_support() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_image_size( 'blog-thumb', 9999, 400 );
 }
 add_action('after_setup_theme', 'jk_theme_support');
 
