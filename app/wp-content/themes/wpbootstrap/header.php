@@ -6,7 +6,7 @@
 	<body>
 
 		<!--Navbar-->
-		<nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: #272643">
+		<nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: #1f4961">
 			<div class="container-fluid">
 				<!-- Navbar brand -->
 				<a class="navbar-brand" href="/"><?php echo get_bloginfo( 'name' ); ?></a>

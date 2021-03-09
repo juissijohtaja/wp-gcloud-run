@@ -1,4 +1,5 @@
-<div class='comments-wrapper'>
+<div class='row'>
+<div class='comments-wrapper col-md-8 offset-md-2'>
   <div class='comments-header'>
     <h5>
     <?php 
@@ -38,4 +39,5 @@
       }
     ?>
   </div>
+</div>
 </div>

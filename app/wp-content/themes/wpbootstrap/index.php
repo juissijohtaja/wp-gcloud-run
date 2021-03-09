@@ -9,7 +9,7 @@
 				</a>
 			</div>
 			<div class="col-md-6 pl-md-5">
-				<h2 class="mt-3 mt-md-4">
+				<h2 class="mt-3 mt-md-0 mt-lg-4">
 					<a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<p class="lead"><?php the_excerpt(); ?></p>
