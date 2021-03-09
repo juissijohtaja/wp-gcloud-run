@@ -2,11 +2,20 @@
 
 function atg_menu_classes($classes, $item, $args) {
     if($args->theme_location == 'primary') {
-      $classes[] = 'nav-item mr-lg-3';
+      $classes[] = 'nav-item mr-md-3 my-2';
     }
     return $classes;
-  }
-  add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+}
+add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+
+function atg_menu_classes2($classes, $item, $args) {
+    if($args->theme_location == 'footer') {
+      $classes[] = 'nav-item mr-md-3 my-1';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'atg_menu_classes2', 1, 3);
+
 
 function jk_menus() {
     $locations = array(
@@ -66,5 +75,13 @@ function jk_widget_areas() {
 }
 add_action( 'widgets_init', 'jk_widget_areas' );
 
+
+function special_nav_class ($classes, $item) {
+  if (in_array('current-menu-item', $classes) ){
+    $classes[] = 'active ';
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
 ?>
