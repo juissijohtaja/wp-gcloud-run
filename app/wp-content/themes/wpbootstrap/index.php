@@ -12,7 +12,7 @@
 				<h2 class="mt-3 mt-md-0 mt-lg-4">
 					<a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
-				<p class="lead"><?php the_excerpt(); ?></p>
+				<div class="mt-3"><?php the_excerpt(); ?></div>
 			</div>
 		</div>
 		<hr class="my-4">

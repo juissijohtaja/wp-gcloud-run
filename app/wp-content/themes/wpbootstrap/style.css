@@ -35,7 +35,14 @@ body {
   background-position: top;
   position: relative;
   height: 60vh;
+  text-align: center;
 }
+
+#homepage-hero .wp-block-buttons {
+  align-items: center;
+  justify-content: center;
+}
+
 
 #homepage-promo {
   background-color: #272643;
