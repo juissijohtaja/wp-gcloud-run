@@ -1,12 +1,14 @@
 # Wordpress custom theme and cloud deployment
 
-I made a custom Wordpress theme from scratch and deployed the app to Google Cloud. 
+I made a custom Wordpress theme from scratch and deployed the app to Google Cloud.
 
-The theme uses Bootstrap for styling and has templates for front page, blog, posts and pages. It also has widget placements for footer and promo content on the front page. The theme uses many functions and some additional css styling for customization.
+![Alt text](docs/mytheme-screens.jpg)
+
+The theme is responsive and uses Bootstrap for styling. It has templates for front page, blog, posts and pages. It also has widget placements for footer and promo content on the front page. The theme uses many functions and some additional css styling for customization.
 
 Wordpress CMS and the website using my theme have been deployed to Google Cloud Run using a Docker container and it uses Google Cloud SQL for MySql-database. Uploaded images are stored in Google Cloud Storage bucket using WP Offload Media Lite plugin.
 
-I also used Docker Compose for local development. The setup is running Wordpress, phpMyAdmin and mySql containers in a local network.
+I also used Docker Compose for local development. The setup is running Wordpress, phpMyAdmin and mySql containers in a local network. Visual Studio Code was used for development.
 
 ## Updates
 
