@@ -4,7 +4,7 @@
 
 ![Alt text](docs/mytheme-screens.jpg)
 
-The theme is responsive and uses Bootstrap for styling. It has templates for front page, blog, posts and pages. It also has widget placements for footer and promo content on the front page. The theme uses many functions and some additional css styling for customization.
+The theme is responsive and uses Bootstrap for styling. It has templates for front page, blog, posts and pages. It also has widget placements for footer and promo content on the front page. The theme uses functions and some additional css styling for customization.
 
 Wordpress CMS and the website using my theme have been deployed to Google Cloud Run using a Docker container and it uses Google Cloud SQL for MySql-database. Uploaded images are stored in Google Cloud Storage bucket using WP Offload Media Lite plugin.
 
