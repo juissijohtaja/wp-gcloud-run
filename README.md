@@ -1,6 +1,6 @@
 # Wordpress custom theme and cloud deployment
 
-I made a custom Wordpress theme from scratch and deployed the app to Google Cloud.
+**I made a custom Wordpress theme from scratch and deployed the app to Google Cloud.**
 
 ![Alt text](docs/mytheme-screens.jpg)
 
