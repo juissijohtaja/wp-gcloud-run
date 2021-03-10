@@ -8,6 +8,8 @@ Wordpress CMS and the website using my theme have been deployed to Google Cloud 
 
 I also used Docker Compose for local development. The setup is running Wordpress, phpMyAdmin and mySql containers in a local network.
 
+## Updates
+
 - Wordpress is now updated to the latest version 5.7.
 
 ## More info
