@@ -13,7 +13,8 @@ app/sitemap.xml.gz
 *.png
 *.txt
 *.csv
- 
+!docs/*.jpg
+
 # WP dirs.
 app/wp-admin/*
 app/wp-includes/*
