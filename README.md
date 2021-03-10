@@ -1,13 +1,11 @@
-## Build and deploy
-```bash
-gcloud builds submit --tag gcr.io/PROJECT_NAME/IMAGE_NAME // build an image
-gcloud run deploy wordpress [--region REGION] --platform managed --image gcr.io/PROJECT_NAME/IMAGE_NAME --set-env-vars DB_NAME=wordpress,DB_USER=root,DB_PASSWORD=mysecretpassword,DB_HOST=database_host --port 80 // deploy to Cloud run
-```
+# Wordpress custom theme and cloud deployment
 
-Environment variables and port could be set via Cloud Run interface, or pass it via yaml file as `--env-vars-file .env.yaml` https://cloud.google.com/functions/docs/env-var
+I made a custom Wordpress theme from scratch and deployed the app to Google Cloud. 
 
-## Setup
-- Dockerfile contains oficial PHP image with Apache and configuration for mysql connect and image handling.
-- wp-config.php uses environment variables for database parameters instead of hard-coded values
-- contains [WP Timeless plugin](https://wordpress.org/plugins/wp-stateless/), which allow us to use Google Cloud Storage instead of local storage
+The theme uses Bootstrap for styling and has templates for front page, blog, posts and pages. It also has widget placements for footer and promo content on the front page. The theme uses many functions and some additional css styling for customization.
 
+Wordpress CMS and the website using my theme have been deployed to Google Cloud Run using a Docker container and it uses Google Cloud SQL for MySql-database. Uploaded images are stored in Google Cloud Storage bucket using WP Offload Media Lite plugin.
+
+I also used Docker Compose for local development. The setup is running Wordpress, phpMyAdmin and mySql containers in a local network.
+
+- Wordpress is now updated to the latest version 5.7.

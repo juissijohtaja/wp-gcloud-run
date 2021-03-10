@@ -72,6 +72,15 @@ function jk_widget_areas() {
             'description' => 'Footer Widget Area'
         )
     );
+
+    register_sidebar( array(
+		'name'          => 'Home promo',
+		'id'            => 'home_promo',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'jk_widget_areas' );
 
@@ -83,17 +92,5 @@ function special_nav_class ($classes, $item) {
   return $classes;
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-
-function arphabet_widgets_init() {
-	register_sidebar( array(
-		'name'          => 'Home promo',
-		'id'            => 'home_promo',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 ?>
