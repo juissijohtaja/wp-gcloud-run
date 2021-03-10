@@ -31,9 +31,9 @@
 	</div>
 
 	<?php if ( is_active_sidebar( 'home_promo' ) ) : ?>
-		<div id="homepage-promo" class="my-4 py-5 px-3 text-center text-light">
+		<div id="homepage-promo" class="my-4 px-4 pt-4 pb-5 text-center text-light">
 			<?php dynamic_sidebar( 'home_promo' ); ?>
-		</div><!-- #primary-sidebar -->
+		</div>
 	<?php endif; ?>
 
 <?php get_footer(); ?>
