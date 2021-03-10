@@ -30,8 +30,10 @@
 		<?php endwhile; endif; ?>
 	</div>
 
-	<?php
-		// dynamic_sidebar( 'sidebar-1' )
-	?>
+	<?php if ( is_active_sidebar( 'home_promo' ) ) : ?>
+		<div id="homepage-promo" class="my-4 py-5 px-3 text-center text-light">
+			<?php dynamic_sidebar( 'home_promo' ); ?>
+		</div><!-- #primary-sidebar -->
+	<?php endif; ?>
 
 <?php get_footer(); ?>

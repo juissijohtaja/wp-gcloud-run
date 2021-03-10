@@ -26,7 +26,7 @@
 								// 'menu' => 'primary',
 								'container' => '',
 								'theme_location' => 'primary',
-								'items_wrap' => '<ul id="primary-menu" class="navbar-nav me-auto my-2 my-sm-0">%3$s</ul>'
+								'items_wrap' => '<ul id="primary-menu" class="navbar-nav ml-auto my-2 my-sm-0">%3$s</ul>'
 							));
 						?>
 					<!-- Links -->
