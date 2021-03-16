@@ -18,8 +18,9 @@ jobs:
         with:
           application_credentials: ${{ secrets.GCLOUD_AUTH }}
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
-          commands: "gcloud builds submit --tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run|gcloud run deploy wordpress --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run --platform managed --region europe-north1 --set-env-vars ${{ secrets.WP_ENVS }} --project=${{ secrets.GCLOUD_PROJECT_ID }} --port 80"
+          command: gcloud builds submit --tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run
 
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
     
+#    command: "gcloud builds submit --tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run|gcloud run deploy wordpress --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run --platform managed --region europe-north1 --set-env-vars ${{ secrets.WP_ENVS }} --project=${{ secrets.GCLOUD_PROJECT_ID }} --port 80"
