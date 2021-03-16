@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: deployment
-        uses: convictional/gcp-storage-action@master
+        uses: convictional/gcp-github-action@v1.0.1
         with:
           application_credentials: ${{ secrets.GCLOUD_AUTH }}
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
