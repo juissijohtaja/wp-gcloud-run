@@ -8,21 +8,42 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
+env:
+  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+  SERVICE: wp-gcloud-run
+  REGION: europe-north1
+
 jobs:
-  build_publish_gcr:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Authenticate with google cloud
-        uses: actions/gcloud/auth@master
-        env:
-          GCLOUD_PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
-          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
-      - name: Push to Goolge Cloud Registry
-        uses: actions/gcloud/cli@master
-        with:
-          args: "components install beta --quiet && 
-            gcloud auth configure-docker && docker build -t ${{ secrets.GCLOUD_PROJECT_ID }} . &&
-            docker tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run && 
-            docker push gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run"
+    - name: Checkout
+      uses: actions/checkout@v2
 
+    - name: Setup Cloud SDK
+      uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        project_id: ${{ env.PROJECT_ID }}
+        service_account_key: ${{ secrets.GCLOUD_AUTH }}
+        export_default_credentials: true  # Set to true to authenticate the Cloud Run action
+
+    - name: Authorize Docker push
+      run: gcloud auth configure-docker
+
+    - name: Build and Push Container
+      run: |-
+        docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }} .
+        docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
+        
+    # - name: Deploy to Cloud Run
+    #   id: deploy
+    #   uses: google-github-actions/deploy-cloudrun@v0.4.0
+    #   with:
+    #     service: ${{ env.SERVICE }}
+    #     image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
+    #     region: ${{ env.REGION }}
+    #     credentials: ${{ secrets.GCLOUD_AUTH }}
+    #     env_vars: ${{ secrets.WP_ENVS }}
+
+    # - name: Show Output
+    #   run: echo ${{ steps.deploy.outputs.url }}
