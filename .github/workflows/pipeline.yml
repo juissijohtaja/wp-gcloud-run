@@ -8,42 +8,29 @@ on:
   #   branches: [master]
   #   types: [opened, synchronize]
 
-env:
-  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
-  SERVICE: jkwordpress
-  REGION: europe-north1
-
 jobs:
-  deploy:
+  build_publish_gcr:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
-    - name: Setup Cloud SDK
-      uses: google-github-actions/setup-gcloud@v0.2.0
-      with:
-        project_id: ${{ env.PROJECT_ID }}
-        service_account_key: ${{ secrets.GCLOUD_AUTH }}
-        export_default_credentials: true  # Set to true to authenticate the Cloud Run action
+      - name: Authenticate with google cloud
 
-    - name: Authorize Docker push
-      run: gcloud auth configure-docker
+        uses: actions/gcloud/auth@master
+        env:
+          GCLOUD_PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
 
-    - name: Build and Push Container
-      run: |-
-        docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }} .
-        docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
-        
-    - name: Deploy to Cloud Run
-      id: deploy
-      uses: google-github-actions/deploy-cloudrun@v0.4.0
-      with:
-        service: ${{ env.SERVICE }}
-        image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
-        region: ${{ env.REGION }}
-        credentials: ${{ secrets.GCLOUD_AUTH }}
-        env_vars: DB_NAME=wordpress,DB_USER=root,DB_PASSWORD=password,DB_HOST=:/cloudsql/jkwordpress:europe-north1:wordpress
+      - name: Push to Goolge Cloud Registry
+        uses: actions/gcloud/cli@master
+        with:
+          args: "components install beta --quiet && gcloud builds submit --tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run"
 
-    - name: Show Output
-      run: echo ${{ steps.deploy.outputs.url }}
+      - name: Deploy to cloud run
+        uses: actions/gcloud/cli@master
+        with:
+          args: "components install beta --quiet && gcloud beta run deploy wordpress --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/wp-gcloud-run --platform managed  --region europe-north1 --set-env-vars ${{ secrets.WP_ENVS }} --project=${{ secrets.GCLOUD_PROJECT_ID }} --port 80"
+      
+      - name: Show Output
+        run: echo ${{ steps.deploy.outputs.url }}
+    
