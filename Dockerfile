@@ -13,8 +13,6 @@ RUN docker-php-ext-configure zip --with-libzip \
     && docker-php-ext-install -j "$(nproc)" gd \
     && a2enmod rewrite 
 
-RUN apt-get install apt-utils -y && apt-get install wget -y && apt-get install tar -y
-
 # create downloads folder
 RUN mkdir /downloads
 
