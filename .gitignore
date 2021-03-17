@@ -1,4 +1,5 @@
 # Configuration.
+app2
 app/.htaccess
 app/wp-config.php
  
@@ -10,12 +11,13 @@ app/sitemap.xml.gz
 *.pdf
 *.jpg
 *.jpeg
-*.png
+#*.png
 *.txt
 *.csv
 !docs/*.jpg
 
 # WP dirs.
+
 app/wp-admin/*
 app/wp-includes/*
 app/wp-snapshots/*
@@ -24,10 +26,7 @@ app/wp-snapshots/*
 app/wp-content/languages/*
 app/wp-content/uploads/*
 app/wp-content/plugins/*
-!app/wp-content/plugins/CUSTOM_PLUGIN_1
-!app/wp-content/plugins/CUSTOM_PLUGIN_2 # etc.
 app/wp-content/themes/*
-!app/wp-content/themes/wpbootstrap
  
 # Ignore node dependency directories.
 **/node_modules/
@@ -44,6 +43,6 @@ app/wp-content/themes/*
 **/.DS_Store
 
 # My folders
-/my-plugins/
 GUIDE.md
+/my-plugins/
 Dockerfile copy

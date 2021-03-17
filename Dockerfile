@@ -16,7 +16,7 @@ RUN docker-php-ext-configure zip --with-libzip \
 # create downloads folder
 RUN mkdir /downloads
 
-# download WordPress
+# download wordpress
 RUN cd /downloads \
     && wget https://wordpress.org/latest.tar.gz \
     && tar zxvf latest.tar.gz \
@@ -33,13 +33,14 @@ RUN rm -rf /downloads
 # remove config sample
 RUN rm /var/www/html/wp-config-sample.php
 
-# copy config, plugins and themes
+# copy wp-config and themes
 COPY ./my-config/wp-config.php /var/www/html/
 COPY ./my-themes /var/www/html/wp-content/themes
 
-WORKDIR /var/www/html
-
+# setup directory and permissions for uploads
 RUN mkdir -p /var/www/html/wp-content/uploads \
     && chown -R www-data:www-data /var/www/html/wp-content/uploads \
     && chmod 755 /var/www/html/wp-content/uploads
 
+# set working directory to serve wordpress files
+WORKDIR /var/www/html
