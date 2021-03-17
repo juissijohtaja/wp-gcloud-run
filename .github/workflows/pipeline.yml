@@ -3,7 +3,7 @@ name: Build and Deploy My Container
 on:
   push:
     branches:
-      - master
+      - masterXXX # action currently on hold
   pull_request:
     branches: [master]
     types: [opened, synchronize]
@@ -42,7 +42,6 @@ jobs:
         service: ${{ env.SERVICE }}
         image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
         region: ${{ env.REGION }}
-        #credentials: ${{ secrets.GCLOUD_AUTH }}
         env_vars: ${{ secrets.WP_ENVS }}
 
     - name: Show Output

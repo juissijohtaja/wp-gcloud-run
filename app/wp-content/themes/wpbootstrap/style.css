@@ -34,7 +34,7 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  height: 60vh;
+  min-height: 40vh;
   text-align: center;
 }
 
