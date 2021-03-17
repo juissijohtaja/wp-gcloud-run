@@ -1,23 +1,17 @@
-FROM php:8-apache
+FROM php:7.3.16-apache-stretch
 
-# install php modules and configure setup
+# install apps and configure setup
 RUN apt-get update && apt-get upgrade -yy \
     && apt-get install --no-install-recommends libjpeg-dev libpng-dev libwebp-dev \
     libzip-dev libfreetype6-dev supervisor zip \
-    unzip software-properties-common -yy wget -y tar -y exif libmagickwand-dev \
+    unzip software-properties-common -yy wget -y tar -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# install imagick
-# Version is not officially released https://pecl.php.net/get/imagick but following works for PHP 8
-RUN mkdir -p /usr/src/php/ext/imagick; \
-    curl -fsSL https://github.com/Imagick/imagick/archive/06116aa24b76edaf6b1693198f79e6c295eda8a9.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1; \
-    docker-php-ext-install imagick;
-
-# install more modules and configure setup
-RUN docker-php-ext-install gd mysqli pdo pdo_mysql \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure zip --with-libzip \
+    && docker-php-ext-install mbstring gd mysqli pdo pdo_mysql \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr --with-webp-dir=/usr \
     && docker-php-ext-install -j "$(nproc)" gd \
-    && a2enmod rewrite
+    && a2enmod rewrite 
 
 # create downloads folder
 RUN mkdir /downloads
