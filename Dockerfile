@@ -35,7 +35,6 @@ RUN rm /var/www/html/wp-config-sample.php
 
 # copy config, plugins and themes
 COPY ./my-config/wp-config.php /var/www/html/
-COPY ./my-plugins /var/www/html/wp-content/plugins
 COPY ./my-themes /var/www/html/wp-content/themes
 
 WORKDIR /var/www/html
