@@ -3,7 +3,7 @@ name: Build and Deploy My Container
 on:
   push:
     branches:
-      - masterXXX # action currently on hold
+      - master
   pull_request:
     branches: [master]
     types: [opened, synchronize]
