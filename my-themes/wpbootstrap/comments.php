@@ -20,6 +20,12 @@
   </div>
   <div class='comments-form'>
     <?php 
+      // Get variables used in the field array
+      $req      	= get_option( 'require_name_email' );
+      $aria_req = ( $req ? " aria-required='true'" : '' );
+      $html_req 	= ( $req ? " required='required'" : '' );
+      $html5    	= current_theme_supports( 'html5', 'comment-form' );
+      $commenter	= wp_get_current_commenter();
 
       $comment_args = array(
         'class_submit' => 'btn btn-info submit',
