@@ -21,6 +21,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Cloud SDK
+      if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       uses: google-github-actions/setup-gcloud@v0.2.0
       with:
         project_id: ${{ env.PROJECT_ID }}
@@ -28,14 +29,17 @@ jobs:
         export_default_credentials: true  # Set to true to authenticate the Cloud Run action
 
     - name: Authorize Docker push
+      if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       run: gcloud auth configure-docker
 
     - name: Build and Push Container
+      if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       run: |-
         docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }} .
         docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
         
     - name: Deploy to Cloud Run
+      if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       id: deploy
       uses: google-github-actions/deploy-cloudrun@v0.4.0
       with:
@@ -45,4 +49,5 @@ jobs:
         env_vars: ${{ secrets.WP_ENVS }}
 
     - name: Show Output
+      if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       run: echo ${{ steps.deploy.outputs.url }}

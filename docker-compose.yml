@@ -16,11 +16,11 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:latest
+    image: wordpress:5.7-php8.0-apache
     ports:
       - "8000:80"
     volumes:
-      - ./app/wp-content:/var/www/html/wp-content
+      #- ./app/wp-content:/var/www/html/wp-content
       - ./my-themes/wpbootstrap:/var/www/html/wp-content/themes/wpbootstrap
       - ./my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
     restart: always
