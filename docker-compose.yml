@@ -20,9 +20,11 @@ services:
     ports:
       - "8000:80"
     volumes:
-      #- ./app/wp-content:/var/www/html/wp-content
+      - ./local-dev/my-content:/var/www/html/wp-content
+      - ./local-dev/my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
       - ./my-themes/wpbootstrap:/var/www/html/wp-content/themes/wpbootstrap
-      - ./my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
+      - ./my-themes/wpcssgrid:/var/www/html/wp-content/themes/wpcssgrid
+      - ./my-themes/ignition-master:/var/www/html/wp-content/themes/ignition-master
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

@@ -45,4 +45,7 @@ app/wp-content/themes/*
 # My folders
 GUIDE.md
 /my-plugins/
+/my-content/
+/my-themes/ignition-master
+/local-dev/
 Dockerfile copy
