@@ -99,7 +99,9 @@ a, a:hover, a:active {
     }
   }
 }
-/* Topnav sections */
+/*--------------------------------------------------------------
+ Topnav sections
+ --------------------------------------------------------------*/
 .topnav {
   max-width: 72em;
   margin: auto;
@@ -129,14 +131,13 @@ a, a:hover, a:active {
     justify-content: flex-end;
   }
 }
-.show {
-  display: flex;
-}
 .navbar-collapse li.active a {
   font-weight: 600;
   color: #fff;
 }
-/* Navbar */
+.show {
+  display: flex;
+}
 nav {
   margin-bottom: 0rem;
   display: flex;
@@ -172,7 +173,7 @@ nav a {
 nav a:hover, nav a:active {
   color: #fcfcfc;
 }
-/* HAMBURGER MENU ANIMATION
+/* HAMBURGER TOGLLE AND MENU ANIMATION
  -------------------------------------------------- */
 .navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
   outline: none;
@@ -188,7 +189,6 @@ nav a:hover, nav a:active {
     display: none;
   }
 }
-/* Toggle Icon */
 .animated-icon2 {
   width: 30px;
   height: 30px;
@@ -256,7 +256,9 @@ nav a:hover, nav a:active {
   width: 0%;
   left: 50%;
 }
-/* Footer nav */
+/*--------------------------------------------------------------
+ Footer nav
+ --------------------------------------------------------------*/
 ul#footer-menu {
   list-style-type: none;
 }
