@@ -6,15 +6,40 @@
 	<body>
 		<div class="site">
 			<header class="masthead">
-					<?php echo get_bloginfo( 'name' ); ?>
-					<!-- Links -->
-					<?php
+				<div class="topnav">
+					<div class="brand">
+						<a class="sitename" href="/">
+							<?php echo get_bloginfo( 'name' ); ?>
+						</a>
+					</div>
+
+					<!-- Collapse button -->
+					<button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+						<div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+					</button>
+
+					<!-- Collapsible content -->
+					<div class="collapse navbar-collapse" id="navbar">
+						<!-- Links -->
+						<nav class="primary-nav">
+							<?php
 								wp_nav_menu(array(
 									// 'menu' => 'primary',
 									'container' => '',
 									'theme_location' => 'primary',
-									'items_wrap' => '<ul id="primary-menu" class="navbar-nav ml-auto my-2 my-sm-0">%3$s</ul>'
+									'items_wrap' => '<ul id="primary-menu" class="menu">%3$s</ul>'
 								));
 							?>
+						</nav>
 						<!-- Links -->
+					</div>
+					<!-- Collapsible content -->
+
+				</div>
+				<!-- Topnav -->
+
+				
+
+
 			</header><!-- .masthead -->
+

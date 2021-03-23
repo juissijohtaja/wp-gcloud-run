@@ -10,19 +10,19 @@ Text Domain: wpcssgrid
 
 
 #primary-menu a {
-    color: #9b9b9b;
-    text-decoration: none;
+  color: #9b9b9b;
+  text-decoration: none;
 }
 #primary-menu a:hover, #primary-menu a:active {
-    color: #fcfcfc;
+  color: #fcfcfc;
 }
 
 #footer-menu a {
-    color: #c9c9c9;
-    text-decoration: none;
+  color: #c9c9c9;
+  text-decoration: none;
 }
 #footer-menu a:hover, #primary-menu a:active {
-    color: #fcfcfc;
+  color: #fcfcfc;
 }
 
 
@@ -32,118 +32,118 @@ Text Domain: wpcssgrid
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 .navbar-toggler {
-  border: 0px;
+border: 0px;
 }
 
 #primary-menu li.active a {
-  font-weight: 600;
-  color: #ffffff;
+font-weight: 600;
+color: #ffffff;
 }
 
 /* Icon 1 */
 
 .animated-icon2 {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin: 0px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-  }
-  
-  .animated-icon2 span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  margin-top:4px;
-  width: 100%;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-  }
+width: 30px;
+height: 30px;
+position: relative;
+margin: 0px;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+cursor: pointer;
+}
 
-  .animated-icon2 span {
-  background: #e3f2fd;
-  }  
-  
-  /* Icon 3*/
-  
-  .animated-icon2 span:nth-child(1) {
-  top: 0px;
-  }
-  
-  .animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
-  top: 10px;
-  }
-  
-  .animated-icon2 span:nth-child(4) {
-  top: 20px;
-  }
-  
-  .animated-icon2.open span:nth-child(1) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-  }
-  
-  .animated-icon2.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  }
-  
-  .animated-icon2.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  }
-  
-  .animated-icon2.open span:nth-child(4) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-  }
+.animated-icon2 span {
+display: block;
+position: absolute;
+height: 3px;
+margin-top:4px;
+width: 100%;
+border-radius: 9px;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .25s ease-in-out;
+-moz-transition: .25s ease-in-out;
+-o-transition: .25s ease-in-out;
+transition: .25s ease-in-out;
+}
+
+.animated-icon2 span {
+background: #e3f2fd;
+}  
+
+/* Icon 3*/
+
+.animated-icon2 span:nth-child(1) {
+top: 0px;
+}
+
+.animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
+top: 10px;
+}
+
+.animated-icon2 span:nth-child(4) {
+top: 20px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+top: 11px;
+width: 0%;
+left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+.animated-icon2.open span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+.animated-icon2.open span:nth-child(4) {
+top: 11px;
+width: 0%;
+left: 50%;
+}
 
 
 /*--------------------------------------------------------------
 CSS Reset
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+font-family: sans-serif;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust:     100%;
 }
 
 body {
-	margin: 0;
+margin: 0;
 }
 
 img {
-	display: block;
-	border: 0;
-	width: 100%;
-	height: auto;
+display: block;
+border: 0;
+width: 100%;
+height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -154,30 +154,30 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: 'Helvetica', Arial, sans-serif;
-	font-size: 18px;
-	line-height: 1.5;
+color: #404040;
+font-family: 'Helvetica', Arial, sans-serif;
+font-size: 18px;
+line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
-	margin: 0;
-	padding: 1em 0;
+margin: 0;
+padding: 1em 0;
 }
 
 p {
-	margin: 0;
-	padding: 1em 0;
+margin: 0;
+padding: 1em 0;
 }
 
 /*--------------------------------------------------------------
 General styles
 --------------------------------------------------------------*/
 .site {
-	background: #ededed;
-	min-height: 100vh;
+background: #ededed;
+min-height: 100vh;
 }
 
 .masthead,
@@ -185,52 +185,52 @@ General styles
 .sidebar,
 .twin,
 .footer {
-	padding: 1em 2em;
+padding: 1em 2em;
 }
 
 .main-content {
-	background: white;
+background: white;
 }
 .masthead {
-	background: #1b3444;
-	color: white;
+background: #1b3444;
+color: white;
 }
 
 .sidebar {
-	background: #FF7F66;
+background: #FF7F66;
 }
 
 .twin {
-	background: #2185C5;
+background: #2185C5;
 }
 
 .twin:last-of-type {
-	background: #7ECEFD;
+background: #7ECEFD;
 }
 
 .colophon {
-	padding: 2em;
-	background: #3E454C;
-	color: white;
+padding: 2em;
+background: #3E454C;
+color: white;
 }
 
 .colophon a {
-	color: white;
+color: white;
 }
 
 .colophon a:hover,
 .colophon a:focus {
-	border-bottom: 1px solid white;
+border-bottom: 1px solid white;
 }
 
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
 @supports not (display: grid) {
-	.site {
-		max-width: 50em;
-		margin: 0 auto;
-	}
+.site {
+  max-width: 50em;
+  margin: 0 auto;
+}
 }
 
 /*--------------------------------------------------------------
@@ -238,35 +238,35 @@ CSS Grid layout for wider screens, when browser supports grid:
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 600px) {
-	@supports (display: grid) {
+@supports (display: grid) {
 
-		.site {
-			display: grid;
-			grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
-			grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
-		}
+  .site {
+    display: grid;
+    grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
+    grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+  }
 
-		.masthead,
-		.colophon {
-			grid-column: span 8;
-		}
+  .masthead,
+  .colophon {
+    grid-column: span 8;
+  }
 
-		.main-content {
-			grid-column: 2/8;
-		}
+  .main-content {
+    grid-column: 2/8;
+  }
 
-		.sidebar {
-			grid-column: 6/8;
-		}
+  .sidebar {
+    grid-column: 6/8;
+  }
 
-		.twin {
-			grid-column: 2/5;
-			grid-row: 3/4;
-		}
+  .twin {
+    grid-column: 2/5;
+    grid-row: 3/4;
+  }
 
-		.twin:last-of-type {
-			grid-column: 5/8;
-		}
+  .twin:last-of-type {
+    grid-column: 5/8;
+  }
 
-	}
+}
 }

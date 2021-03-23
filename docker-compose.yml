@@ -21,6 +21,7 @@ services:
       - "8000:80"
     volumes:
       - ./local-dev/my-content:/var/www/html/wp-content
+      - ./local-dev/my-plugins/wp-scss:/var/www/html/wp-content/plugins/wp-scss
       - ./local-dev/my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
       - ./my-themes/wpbootstrap:/var/www/html/wp-content/themes/wpbootstrap
       - ./my-themes/wpcssgrid:/var/www/html/wp-content/themes/wpcssgrid

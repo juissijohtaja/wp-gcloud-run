@@ -35,7 +35,7 @@ add_action('after_setup_theme', 'jk_theme_support');
 
 function jk_register_styles(){
     $version = wp_get_theme() -> get('Version');
-    wp_enqueue_style( 'jk-style', get_template_directory_uri().'/style.css', array(), $version, 'all');
+    #wp_enqueue_style( 'jk-style', get_template_directory_uri().'/style.css', array(), $version, 'all');
     #wp_enqueue_style( 'jk-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', array(), '4.5.2', 'all');
     wp_enqueue_style( 'jk-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css', array(), '4.7.0', 'all');
 }

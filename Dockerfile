@@ -31,7 +31,9 @@ RUN cd /downloads \
 # download plugins
 RUN cd /downloads \
     && wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.5.3.zip \
-    && unzip amazon-s3-and-cloudfront.2.5.3.zip -d /var/www/html/wp-content/plugins
+    && unzip amazon-s3-and-cloudfront.2.5.3.zip -d /var/www/html/wp-content/plugins \
+    && wget https://downloads.wordpress.org/plugin/wp-scss.2.1.3.zip \
+    && unzip wp-scss.2.1.3.zip -d /var/www/html/wp-content/plugins
 
 # remove downloads folder 
 RUN rm -rf /downloads
