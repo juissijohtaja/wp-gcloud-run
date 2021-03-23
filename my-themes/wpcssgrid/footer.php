@@ -4,7 +4,7 @@
 					// 'menu' => 'footer',
 					'container' => '',
 					'theme_location' => 'footer',
-					'items_wrap' => '<ul id="footer-menu" class="navbar-nav me-auto my-2 my-sm-0">%3$s</ul>'
+					'items_wrap' => '<ul id="footer-menu" class="">%3$s</ul>'
 				));
 			?>
 			<?php dynamic_sidebar( 'footer-1' ) ?>

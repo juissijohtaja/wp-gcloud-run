@@ -7,6 +7,8 @@
 		<div class="site">
 			<header class="masthead">
 				<div class="topnav">
+
+					<!-- Branding -->
 					<div class="brand">
 						<a class="sitename" href="/">
 							<?php echo get_bloginfo( 'name' ); ?>
@@ -20,26 +22,17 @@
 
 					<!-- Collapsible content -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<!-- Links -->
 						<nav class="primary-nav">
 							<?php
 								wp_nav_menu(array(
-									// 'menu' => 'primary',
 									'container' => '',
 									'theme_location' => 'primary',
 									'items_wrap' => '<ul id="primary-menu" class="menu">%3$s</ul>'
 								));
 							?>
 						</nav>
-						<!-- Links -->
 					</div>
-					<!-- Collapsible content -->
 
-				</div>
-				<!-- Topnav -->
+				</div> <!-- topnav -->
 
-				
-
-
-			</header><!-- .masthead -->
-
+			</header> <!-- masthead -->

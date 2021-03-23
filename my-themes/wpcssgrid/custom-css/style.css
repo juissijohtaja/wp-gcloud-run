@@ -7,181 +7,6 @@
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: wpcssgrid
  */
-nav {
-  margin-bottom: 0rem;
-  display: flex;
-  font-size: 1rem;
-}
-nav ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0;
-  margin: 0;
-}
-@media (min-width: 600px) {
-  nav ul {
-    flex-direction: row;
-    padding: 0;
-  }
-}
-nav ul li {
-  padding: 0px;
-  margin-left: 0px;
-  padding: 4px 0;
-}
-@media (min-width: 600px) {
-  nav ul li {
-    margin-left: 20px;
-    padding: 0;
-  }
-}
-nav a {
-  font-size: 1rem;
-}
-@media (min-width: 42em) {
-  nav a {
-    font-size: 1rem;
-  }
-}
-/* Navbar */
-a.sitename {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-}
-#primary-menu a {
-  color: #9b9b9b;
-  text-decoration: none;
-}
-#primary-menu a:hover, #primary-menu a:active {
-  color: #fcfcfc;
-}
-#footer-menu a {
-  color: #c9c9c9;
-  text-decoration: none;
-}
-#footer-menu a:hover, #primary-menu a:active {
-  color: #fcfcfc;
-}
-/* HAMBURGER MENU ANIMATION
- -------------------------------------------------- */
-.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
-  outline: none;
-  box-shadow: none;
-}
-.navbar-toggler {
-  border: 0px;
-  background-color: transparent;
-  display: flex;
-}
-@media (min-width: 600px) {
-  .navbar-toggler {
-    display: none;
-  }
-}
-/* Topnav subgrid */
-.topnav {
-  max-width: 72em;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (min-width: 600px) {
-  .topnav {
-    align-items: flex-start;
-    flex-wrap: nowrap;
-  }
-}
-.navbar-collapse {
-  display: none;
-  flex: 100%;
-  flex-grow: 0.001;
-}
-@media (min-width: 600px) {
-  .navbar-collapse {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-.show {
-  display: flex;
-}
-#primary-menu li.active a {
-  font-weight: 600;
-  color: #fff;
-}
-/* Icon 1 */
-.animated-icon2 {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin: 0px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-}
-.animated-icon2 span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  margin-top: 4px;
-  width: 100%;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-.animated-icon2 span {
-  background: #e3f2fd;
-}
-/* Icon 3*/
-.animated-icon2 span:nth-child(1) {
-  top: 0px;
-}
-.animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
-  top: 10px;
-}
-.animated-icon2 span:nth-child(4) {
-  top: 20px;
-}
-.animated-icon2.open span:nth-child(1) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-}
-.animated-icon2.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.animated-icon2.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-.animated-icon2.open span:nth-child(4) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-}
 /*--------------------------------------------------------------
  CSS Reset
  --------------------------------------------------------------*/
@@ -241,8 +66,8 @@ p {
 .colophon a {
   color: white;
 }
-.colophon a:hover, .colophon a:focus {
-  border-bottom: 1px solid white;
+a, a:hover, a:active {
+  text-decoration: none;
 }
 /*--------------------------------------------------------------
  If no grid support, limit width to 50em and center align
@@ -261,7 +86,7 @@ p {
     .site {
       display: grid;
       grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
-      grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+      grid-template-rows: minmax(1em, auto) 1fr auto minmax(0em, auto);
     }
     .masthead {
       grid-column: span 8;
@@ -273,4 +98,174 @@ p {
       grid-column: 2/8;
     }
   }
+}
+/* Topnav sections */
+.topnav {
+  max-width: 72em;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .topnav {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+.brand a {
+  color: #fff;
+  font-weight: 700;
+}
+.navbar-collapse {
+  display: none;
+  flex: 100%;
+  flex-grow: 0.001;
+}
+@media (min-width: 600px) {
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.show {
+  display: flex;
+}
+.navbar-collapse li.active a {
+  font-weight: 600;
+  color: #fff;
+}
+/* Navbar */
+nav {
+  margin-bottom: 0rem;
+  display: flex;
+  font-size: 1rem;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  margin: 0;
+}
+@media (min-width: 600px) {
+  nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+nav ul li {
+  padding: 0px;
+  margin-left: 0px;
+  padding: 4px 0;
+}
+@media (min-width: 600px) {
+  nav ul li {
+    margin-left: 20px;
+    padding: 0;
+  }
+}
+nav a {
+  color: #9b9b9b;
+}
+nav a:hover, nav a:active {
+  color: #fcfcfc;
+}
+/* HAMBURGER MENU ANIMATION
+ -------------------------------------------------- */
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar-toggler {
+  border: 0px;
+  background-color: transparent;
+  display: flex;
+}
+@media (min-width: 600px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+/* Toggle Icon */
+.animated-icon2 {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.animated-icon2 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  margin-top: 4px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.animated-icon2 span {
+  background: #e3f2fd;
+}
+.animated-icon2 span:nth-child(1) {
+  top: 0px;
+}
+.animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
+  top: 10px;
+}
+.animated-icon2 span:nth-child(4) {
+  top: 20px;
+}
+.animated-icon2.open span:nth-child(1) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+.animated-icon2.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.animated-icon2.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.animated-icon2.open span:nth-child(4) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+/* Footer nav */
+ul#footer-menu {
+  list-style-type: none;
+}
+ul#footer-menu li {
+  padding: 4px 0;
+}
+#footer-menu li a {
+  color: #c9c9c9;
+}
+#footer-menu li a:hover {
+  color: #fcfcfc;
 }

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container py-4 mt-3">
+<main id="content" class="main-content"> <!-- main content START -->
 	<?php while(have_posts()) : the_post(); ?>
 		<div class="row">
 			<div class="col-md-6">
@@ -16,8 +16,8 @@
 			</div>
 		</div>
 		<hr class="my-4">
-		<?php endwhile; wp_reset_query(); ?>
-		<?php the_posts_pagination( ); ?>
-</div> 
+	<?php endwhile; wp_reset_query(); ?>
+	<?php the_posts_pagination( ); ?>
+</main> <!-- main content END -->
 
 <?php get_footer(); ?>

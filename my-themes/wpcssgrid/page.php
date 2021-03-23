@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 
-<article class='bg-light py-3 px-4 my-4'>
-	
-  <?php while(have_posts()) : the_post(); ?>
+<main id="content" class="main-content"> <!-- main content START -->
+  <article class=''>
     
-    <?php get_template_part( 'template-parts/content', 'page' ); ?>
-  
-	<?php endwhile; wp_reset_query(); ?>
-</article>
+    <?php while(have_posts()) : the_post(); ?>
+      
+      <?php get_template_part( 'template-parts/content', 'page' ); ?>
+    
+    <?php endwhile; wp_reset_query(); ?>
+  </article>
+</main> <!-- main content END -->
 
 <?php get_footer(); ?>
