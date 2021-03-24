@@ -36,24 +36,57 @@ body,
 button,
 input,
 select,
-textarea {
+textarea,
+a {
   color: #404040;
   font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  //font-size: 1.4rem;
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
-  padding: 1em 0;
+  padding: 1.3em 0 0.2em;
+  color: #1b1b1b;
 }
 
-p {
+html { 
+  font-size: 62.5%;
+  @media (min-width: 600px) {
+    font-size: 70%;
+  }
+}
+
+h1 { 
+  font-size: 5rem;
+  line-height: 1.2;
+  @media (min-width: 600px) {
+    line-height: 1.4;
+  }
+} 
+h2 { font-size: 4rem; }
+h3 { font-size: 3rem; }
+
+p, a, label, textarea { 
+  font-size: 2rem;
+  line-height: 1.8; 
   margin: 0;
   padding: 1em 0;
 }
+
+li { font-size: 2rem; }
+
+.lead { 
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 0.5em 0 0.5em;
+  line-height: 1.5;
+  @media (min-width: 600px) {
+    line-height: 1.8;
+  }
+ }
+
 
 /*--------------------------------------------------------------
 General styles
@@ -129,19 +162,20 @@ CSS Grid layout for wider screens, when browser supports grid:
       grid-column: span 8;
       display: grid;
       grid-gap: 10px;
-      grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
-    }
-    .centered {
-      grid-column: 2/8;
+      grid-template-columns: 1fr repeat(6, minmax(auto, 22em)) 1fr;
+      padding: 2em 0;
     }
     .full {
-      grid-column: span 8;
+      grid-column: 2/8;
+    }
+    .centered {
+      grid-column: 3/7;
     }
     .halfleft {
-      grid-column: 2/5;
+      grid-column: 3/5;
     }
     .halfright {
-      grid-column: 5/8;
+      grid-column: 5/7;
     }
   }
 }
@@ -173,10 +207,11 @@ Topnav sections
 .brand a {
   color: #ffffff;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
+  padding: 0;
 
   @media (min-width: 600px) {
-    font-size: 2rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -208,7 +243,11 @@ Topnav sections
 nav {
   margin-bottom: 0rem;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+
+  @media (min-width: 600px){
+    font-size: 2rem;
+  }
 
   ul {
     list-style-type: none;
@@ -236,6 +275,7 @@ nav {
 
   a {
     color: #ecf4fa;
+    padding: 0;
   }
   a:hover, a:active {
     color: #fcfcfc;
@@ -352,4 +392,39 @@ ul#footer-menu li {
 }
 #footer-menu li a:hover {
   color: #fcfcfc;
+}
+
+/*--------------------------------------------------------------
+Comments
+--------------------------------------------------------------*/
+
+.comments-wrapper {
+  margin: 40px 0;
+  border-top: 1px solid #404040;
+}
+
+.comment { 
+  font-size: 2rem;
+  line-height: 1.8; 
+}
+
+.comments-form {
+  margin: 20px 0;
+  border-top: 1px solid #404040;
+}
+
+.comments-form textarea {
+  width: 100%;
+  height: 20em;
+  padding: 20px;
+}
+
+.button { 
+  font-size: 2rem;
+  line-height: 1.8;
+  padding: 10px 20px;
+  background-color: #363b62;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
 }

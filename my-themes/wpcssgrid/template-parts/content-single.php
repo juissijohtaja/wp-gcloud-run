@@ -1,18 +1,19 @@
+<h1><?php the_title(); ?></h1>
+
 <header class='content-header'>
-  <div class='meta'>
-    <span class='date'><?php the_date(); ?></span>
+  <p class='meta'>
+    <span class='date'><?php the_date(); ?> | </span>
     <?php the_tags(
-      '<span class="">', 
-      '</span><span class="">',
+      '<span>', 
+      '</span> <span>',
       '</span');
     ?>
-    <span class='comments'>| <?php comments_number(); ?></span>
-    
-  </div>
+    <span class='comments'> | <?php comments_number(); ?></span>
+  </p>
 </header>
-<h1 class=''><?php the_title(); ?></h1>
-<p class=''><?php the_content(); ?></p>
 
-<div class=''>
+<?php the_content(); ?>
+
+<div>
   <?php comments_template(); ?>
 </div>

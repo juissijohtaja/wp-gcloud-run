@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main id="content" class="main-content"> <!-- main content START -->
-  <article class=''>
+  <article class='centered'>
     
     <?php while(have_posts()) : the_post(); ?>
       

@@ -1,20 +1,20 @@
-<div class='row'>
-<div class='comments-wrapper col-md-8 offset-md-2'>
+<div class='comments-wrapper'>
   <div class='comments-header'>
-    <h5>
-    <?php 
-      if (!have_comments()) {
-        echo 'Leave a comment';
-      } else {
-        echo get_comments_number(  ).' comments';
-      }
-    ?>
-    </h5>
+    <p>
+      <?php 
+        if (!have_comments()) {
+          echo 'Leave a comment';
+        } else {
+          echo get_comments_number(  ).' comments';
+        }
+      ?>
+    </p>
   </div>
   <div class='comments-content'>
     <?php wp_list_comments(
       array(
-        'style' => 'div'
+        'style' => 'div',
+        'avatar_size' => 0
       )
     ); ?>
   </div>
@@ -28,8 +28,8 @@
       $commenter	= wp_get_current_commenter();
 
       $comment_args = array(
-        'class_submit' => 'btn btn-info submit',
-        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" class="form-control" cols="45" rows="8" aria-required="true" required="required"></textarea></p>',
+        'class_submit' => 'button',
+        'comment_field' => '<div class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" class="form-control" cols="45" rows="8" aria-required="true" required="required"></textarea></div>',
         'fields' => array(
           'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
           '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . ' /></p>',
@@ -45,5 +45,4 @@
       }
     ?>
   </div>
-</div>
 </div>
