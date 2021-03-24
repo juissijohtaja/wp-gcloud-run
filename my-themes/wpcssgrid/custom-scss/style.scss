@@ -112,7 +112,8 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .site {
       display: grid;
-      grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
+      //grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
+      grid-template-columns: 1fr;
       grid-template-rows: minmax(1em, auto) 1fr auto minmax(0em, auto);
     }
 
@@ -125,7 +126,22 @@ CSS Grid layout for wider screens, when browser supports grid:
     }
 
     .main-content {
+      grid-column: span 8;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
+    }
+    .centered {
       grid-column: 2/8;
+    }
+    .full {
+      grid-column: span 8;
+    }
+    .halfleft {
+      grid-column: 2/5;
+    }
+    .halfright {
+      grid-column: 5/8;
     }
   }
 }
