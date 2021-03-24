@@ -11,14 +11,14 @@
 					<!-- Branding -->
 					<div class="brand">
 						<a class="sitename" href="/">
-							<?php echo get_bloginfo( 'name' ); ?>
+						<i class="fas fa-crow"></i> <?php echo get_bloginfo( 'name' ); ?>
 						</a>
-					</div>
 
-					<!-- Collapse button -->
-					<button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-						<div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
-					</button>
+						<!-- Collapse button -->
+						<button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+							<div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+						</button>
+					</div>
 
 					<!-- Collapsible content -->
 					<div class="collapse navbar-collapse" id="navbar">

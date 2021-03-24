@@ -45,7 +45,7 @@ p {
  General styles
  --------------------------------------------------------------*/
 .site {
-  background: #ededed;
+  background: #f3f2f1;
   min-height: 100vh;
 }
 .masthead, .main-content, .sidebar, .twin, .footer {
@@ -55,7 +55,7 @@ p {
   background: white;
 }
 .masthead {
-  background: #1b3444;
+  background: #f1577c;
   color: white;
 }
 .colophon {
@@ -103,32 +103,45 @@ a, a:hover, a:active {
  Topnav sections
  --------------------------------------------------------------*/
 .topnav {
-  max-width: 72em;
-  margin: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 @media (min-width: 600px) {
   .topnav {
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: row;
   }
+}
+.brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .brand a {
   color: #fff;
   font-weight: 700;
+  font-size: 1.6rem;
+}
+@media (min-width: 600px) {
+  .brand a {
+    font-size: 2rem;
+  }
+}
+.navbar-toggler {
+  display: flex;
+}
+@media (min-width: 600px) {
+  .navbar-toggler {
+    display: none;
+  }
 }
 .navbar-collapse {
   display: none;
-  flex: 100%;
-  flex-grow: 0.001;
 }
 @media (min-width: 600px) {
   .navbar-collapse {
     display: flex;
-    justify-content: flex-end;
   }
 }
 .navbar-collapse li.active a {
@@ -141,7 +154,7 @@ a, a:hover, a:active {
 nav {
   margin-bottom: 0rem;
   display: flex;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 nav ul {
   list-style-type: none;
@@ -163,18 +176,19 @@ nav ul li {
 }
 @media (min-width: 600px) {
   nav ul li {
-    margin-left: 20px;
+    margin-left: 50px;
     padding: 0;
   }
 }
 nav a {
-  color: #9b9b9b;
+  color: #ecf4fa;
 }
 nav a:hover, nav a:active {
   color: #fcfcfc;
 }
-/* HAMBURGER TOGLLE AND MENU ANIMATION
- -------------------------------------------------- */
+/*--------------------------------------------------------------
+ HAMBURGER TOGGLE AND MENU ANIMATION
+ --------------------------------------------------------------*/
 .navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
   outline: none;
   box-shadow: none;
@@ -182,12 +196,6 @@ nav a:hover, nav a:active {
 .navbar-toggler {
   border: 0px;
   background-color: transparent;
-  display: flex;
-}
-@media (min-width: 600px) {
-  .navbar-toggler {
-    display: none;
-  }
 }
 .animated-icon2 {
   width: 30px;

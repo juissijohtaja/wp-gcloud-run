@@ -59,7 +59,7 @@ p {
 General styles
 --------------------------------------------------------------*/
 .site {
-  background: #ededed;
+  background: #f3f2f1;
   min-height: 100vh;
 }
 
@@ -75,7 +75,7 @@ General styles
   background: white;
 }
 .masthead {
-  background: #1b3444;
+  background: #f1577c;
   color: white;
 }
 
@@ -136,32 +136,47 @@ Topnav sections
 --------------------------------------------------------------*/
 
 .topnav {
-  max-width: 72em;
-  margin: auto;
+  //max-width: 72em;
+  //margin: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 
   @media (min-width: 600px) {
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: row;
   }
+}
+
+.brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .brand a {
   color: #ffffff;
   font-weight: 700;
+  font-size: 1.6rem;
+
+  @media (min-width: 600px) {
+    font-size: 2rem;
+  }
+}
+
+.navbar-toggler {
+  display: flex;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 }
 
 .navbar-collapse {
   display: none;
-  flex: 100%;
-  flex-grow: 0.001;
 
   @media (min-width: 600px) {
     display: flex;
-    justify-content: flex-end;
   }
 }
 
@@ -177,7 +192,7 @@ Topnav sections
 nav {
   margin-bottom: 0rem;
   display: flex;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
 
   ul {
     list-style-type: none;
@@ -197,14 +212,14 @@ nav {
       padding: 4px 0;
   
       @media (min-width: 600px){
-        margin-left: 20px;
+        margin-left: 50px;
         padding: 0;
       }
     }
   }
 
   a {
-    color: #9b9b9b;
+    color: #ecf4fa;
   }
   a:hover, a:active {
     color: #fcfcfc;
@@ -225,11 +240,6 @@ HAMBURGER TOGGLE AND MENU ANIMATION
 .navbar-toggler {
   border: 0px;
   background-color: transparent;
-  display: flex;
-
-  @media (min-width: 600px) {
-    display: none;
-  }
 }
 
 .animated-icon2 {
