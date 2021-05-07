@@ -12,10 +12,6 @@ Deployment is automated using **GitHub Actions**. The pipeline builds the docker
 
 I also used Docker Compose for local development. The setup is running Wordpress, phpMyAdmin and mySql containers in a local network. Visual Studio Code was used for development.
 
-## Updates
-
-- Wordpress is now updated to the latest version 5.7.
-
 ## More info
 - [Wordpress](https://wordpress.org/)
 - [Google Cloud Run](https://www.google.com)
