@@ -14,6 +14,7 @@ app/sitemap.xml.gz
 #*.png
 *.txt
 *.csv
+*.otf
 !docs/*.jpg
 
 # WP dirs.
@@ -47,5 +48,10 @@ GUIDE.md
 /my-plugins/
 /my-content/
 /my-themes/ignition-master
-/local-dev/
+/local-dev/my-content
+/local-dev/my-plugins/*
+!/local-dev/my-plugins/homehero
+#/local-dev/
+
+
 Dockerfile copy
