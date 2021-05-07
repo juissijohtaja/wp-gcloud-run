@@ -23,6 +23,9 @@ services:
       - ./local-dev/my-content:/var/www/html/wp-content
       - ./local-dev/my-plugins/wp-scss:/var/www/html/wp-content/plugins/wp-scss
       - ./local-dev/my-plugins/amazon-s3-and-cloudfront:/var/www/html/wp-content/plugins/amazon-s3-and-cloudfront
+      - ./local-dev/my-plugins/advanced-custom-fields:/var/www/html/wp-content/plugins/advanced-custom-fields
+      - ./local-dev/my-plugins/jk-plugin:/var/www/html/wp-content/plugins/jk-plugin
+      - ./local-dev/my-plugins/homehero:/var/www/html/wp-content/plugins/homehero
       - ./my-themes/wpbootstrap:/var/www/html/wp-content/themes/wpbootstrap
       - ./my-themes/wpcssgrid:/var/www/html/wp-content/themes/wpcssgrid
       - ./my-themes/ignition-master:/var/www/html/wp-content/themes/ignition-master

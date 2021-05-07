@@ -6,7 +6,6 @@
 	<body>
 		<div class="site">
 			<header class="masthead">
-				<div class="topnav">
 
 					<!-- Branding -->
 					<div class="brand">
@@ -32,7 +31,5 @@
 							?>
 						</nav>
 					</div>
-
-				</div> <!-- topnav -->
 
 			</header> <!-- masthead -->
