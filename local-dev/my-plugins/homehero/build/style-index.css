@@ -9,6 +9,16 @@
   src: url(fonts/gilbert-color.02d3d364.otf);
   font-weight: bold;
 }
+.wp-block-homehero-homehero {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+}
+
 @media screen and (min-width: 600px) {
   @supports (display: grid) {
     .wp-block-homehero-homehero {
@@ -51,11 +61,6 @@
       justify-self: start;
   padding: 0 20px;
 }
-@media (min-width: 600px) {
-  .wp-block-homehero-homehero .herocontent {
-    padding: 0;
-  }
-}
 .wp-block-homehero-homehero .herobutton {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -63,7 +68,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 @media (min-width: 600px) {
   .wp-block-homehero-homehero .herobutton {

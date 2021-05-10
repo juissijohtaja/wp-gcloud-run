@@ -11,6 +11,19 @@
 	font-weight: bold;
 }
 
+	.wp-block-homehero-homehero {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	.wp-block-homehero-homehero .herocontent {	
+		//grid-column: 1;
+		//grid-row: 1;
+	}
+
+
 // GRID
 @media screen and (min-width: 600px) {
   @supports (display: grid) {
@@ -31,7 +44,6 @@
 // DESIGN
 .wp-block-homehero-homehero {
 	margin: 0.5em 0;
-	//background-color: #21759b;
 	color: #fff;
 	font-family: Gilbert;
 	font-size: 44px;
@@ -46,19 +58,14 @@
 		align-self: center;
 		justify-self: start;
 		padding: 0 20px;
-	
-		@media (min-width: 600px){
-			padding: 0;
-		}
 	}
 
 	.herobutton {	
-		//background-color: #9b2176;
 		width: fit-content;
 		padding: 10px 20px;
 		border-radius: 10px;
 		margin-top: 20px;
-		margin-left: 20px;
+		margin-left: 0px;
 
 		@media (min-width: 600px){
 			margin-left: 0px;

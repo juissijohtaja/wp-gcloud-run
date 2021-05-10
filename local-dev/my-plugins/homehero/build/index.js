@@ -7916,8 +7916,8 @@ var Edit = function Edit(_ref) {
   var setTarget = function setTarget() {};
 
   var setLink = function setLink(event) {
-    setUrl(event.target.value);
     console.log(event.target.value);
+    setUrl(event.target.value);
   };
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InspectorControls"], {
