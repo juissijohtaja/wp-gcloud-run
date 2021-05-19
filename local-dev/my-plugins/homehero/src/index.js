@@ -1,4 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
+import { withSelect } from '@wordpress/data';
+
 import './style.scss';
 import Edit from './edit';
 import Save from './save';
@@ -20,7 +22,21 @@ registerBlockType( 'homehero/homehero', {
 			},
 			bg_color: { type: 'string', default: '#21759b' },
 			button_color: { type: 'string', default: '#9b2176' },
+			mediaId: {
+				type: 'number',
+				default: 0
+			},
+			mediaUrl: {
+				type: 'string',
+				default: ''
+			},
+			mediaThumb: {
+				type: 'string',
+				default: ''
+			}
     },
-	edit: Edit,
+	edit: withSelect((select, props) => {
+		return { media: props.attributes.mediaId ? select('core').getMedia(props.attributes.mediaId) : undefined };
+	})(Edit),
 	save: Save,
 } );

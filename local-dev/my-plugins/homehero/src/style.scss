@@ -11,20 +11,14 @@
 	font-weight: bold;
 }
 
-	.wp-block-homehero-homehero {
-		display: grid;
-		grid-gap: 10px;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-	}
-
-	.wp-block-homehero-homehero .herocontent {	
-		//grid-column: 1;
-		//grid-row: 1;
-	}
-
-
 // GRID
+.wp-block-homehero-homehero {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
 @media screen and (min-width: 600px) {
   @supports (display: grid) {
 		.wp-block-homehero-homehero {

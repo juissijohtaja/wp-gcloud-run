@@ -7,7 +7,9 @@ import {
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
-	URLPopover
+	URLPopover,
+	MediaUpload,
+	MediaUploadCheck
 } from '@wordpress/block-editor';
 
 import './editor.scss';
@@ -19,7 +21,8 @@ import {
 	ToolbarGroup, 
 	ToolbarButton,
 	Button,
-	ToggleControl
+	ToggleControl,
+	ResponsiveWrapper
 } from '@wordpress/components';
 
 import { 
@@ -32,7 +35,7 @@ import {
 	keyboardReturn
 } from '@wordpress/icons';
  
-const Edit = ({ attributes, setAttributes }) => {
+const Edit = ({ attributes, setAttributes, media }) => {
 	const onChangeBGColor = ( hexColor ) => {
 		setAttributes( { bg_color: hexColor } );
 	};
@@ -49,6 +52,31 @@ const Edit = ({ attributes, setAttributes }) => {
 		console.log(event.target.value)
 		setUrl(event.target.value)
 	}
+
+	const onSelectMedia = (image) => {
+		setAttributes({
+			mediaId: image.id,
+			mediaUrl: image.url,
+			mediaThumb: image.sizes.medium.url
+		});
+		console.log('image', image)
+	}
+
+	const removeMedia = () => {
+		setAttributes({
+			mediaId: 0,
+			mediaUrl: '',
+			mediaThumb: ''
+		});
+	}
+
+	const blockStyle = {
+		backgroundColor: attributes.bg_color,
+		background: attributes.mediaUrl != 0 ? 'url("' + attributes.mediaUrl + '")' : 'none',
+		backgroundSize: 'cover'
+	}
+
+	console.log('attributes', attributes)
 
 	return (
 		<Fragment>
@@ -71,6 +99,33 @@ const Edit = ({ attributes, setAttributes }) => {
 						<ColorPalette
 							onChange={ onChangeTextColor }
 						/>
+					</PanelRow>
+				</PanelBody>
+				<PanelBody
+					title={__('Select hero image', 'awp')}
+					initialOpen={ true }
+				>
+					<PanelRow>
+						<div className="editor-post-featured-image">
+							<MediaUploadCheck>
+								<MediaUpload
+									onSelect={onSelectMedia}
+									value={attributes.mediaId}
+									allowedTypes={ ['image'] }
+									render={({open}) => (
+										attributes.mediaId == 0 
+											? <Button isPrimary onClick={open}>Select an image</Button>
+											: <>
+												<img className='editor-post-featured-image__preview' src={attributes.mediaThumb} style={ { marginBottom: '10px' } } />
+												<div className="story-buttons-container">
+													<Button isSecondary onClick={open}>Replace image</Button>
+													<Button onClick={removeMedia} isLink isDestructive>Remove image</Button>
+												</div>
+											</>
+									)}
+								/>
+							</MediaUploadCheck>
+						</div>
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
@@ -114,9 +169,7 @@ const Edit = ({ attributes, setAttributes }) => {
 			</BlockControls>
 
 			<div { ...useBlockProps() }
-				style={ {
-					backgroundColor: attributes.bg_color,
-				} }
+				style={blockStyle}
 			>
 				<div className='herocontent'>
 					<div className='herotitle'>
