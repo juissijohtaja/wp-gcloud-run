@@ -128,13 +128,15 @@ a, a:hover, a:active {
       grid-column: 2/3;
     }
     .main-content {
-      /* grid-column: span 8;
-       display: grid;
-       grid-gap: 10px;
-       grid-template-columns: 1fr repeat(6, minmax(auto, 22em)) 1fr;
-       padding: 2em 0; */
       margin: 0 auto 4rem;
       max-width: 1440px;
+    }
+    .blog-content {
+      grid-column: span 8;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr repeat(6, minmax(auto, 22em)) 1fr;
+      padding: 2em 0;
     }
     .full {
       grid-column: 2/8;

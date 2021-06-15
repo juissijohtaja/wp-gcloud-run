@@ -8157,9 +8157,10 @@ __webpack_require__.r(__webpack_exports__);
 var Save = function Save(_ref) {
   var attributes = _ref.attributes;
   var blockStyle = {
-    backgroundColor: attributes.bg_color,
-    background: attributes.mediaUrl != 0 ? 'url("' + attributes.mediaUrl + '")' : 'none',
-    backgroundSize: 'cover'
+    backgroundImage: attributes.mediaUrl != 0 ? 'url("' + attributes.mediaUrl + '")' : 'none',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundColor: attributes.bg_color
   };
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"].save(), {
     style: blockStyle

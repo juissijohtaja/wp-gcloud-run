@@ -4,9 +4,10 @@ import { useBlockProps } from '@wordpress/block-editor';
 const Save = ({ attributes }) => {
 
 	const blockStyle = {
+		backgroundImage: attributes.mediaUrl != 0 ? 'url("' + attributes.mediaUrl + '")' : 'none',
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
 		backgroundColor: attributes.bg_color,
-		background: attributes.mediaUrl != 0 ? 'url("' + attributes.mediaUrl + '")' : 'none',
-		backgroundSize: 'cover'
 	}
 
 	return (

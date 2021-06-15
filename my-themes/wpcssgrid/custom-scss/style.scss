@@ -154,13 +154,15 @@ CSS Grid layout for wider screens, when browser supports grid:
     }
 
     .main-content {
-      /* grid-column: span 8;
+      margin: 0 auto 4rem;
+      max-width: 1440px;
+    }
+    .blog-content {
+      grid-column: span 8;
       display: grid;
       grid-gap: 10px;
       grid-template-columns: 1fr repeat(6, minmax(auto, 22em)) 1fr;
-      padding: 2em 0; */
-      margin: 0 auto 4rem;
-      max-width: 1440px;
+      padding: 2em 0;
     }
     .full {
       grid-column: 2/8;
